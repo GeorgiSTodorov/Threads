@@ -1,0 +1,35 @@
+$backgroundGrey: rgb(240, 240, 240)
+$borderGrey: rgb(230, 230, 230)
+$containerMaxWidth: 768px
+$containerMinWidth: 320px
+$messageMargin: 20px
+$messageMinHeigth: 80px
+$messagePadding: 24px
+$white: #FFFFFF
+$messageBorderRadius: 2%
+$messageWidth: 80%
+
+body
+  background: $backgroundGrey
+
+.container
+  margin: auto
+  max-width: $containerMinWidth
+  min-width: $containerMaxWidth
+
+.message
+  background: $white
+  border-radius: $messageBorderRadius
+  border: 1px solid $borderGrey
+  margin-top: $messageMargin
+  margin: auto
+  min-height: $messageMinHeigth
+  padding: $messagePadding
+  width: $messageWidth
+
+.messageRow
+  display: flex
+  justify-content: space-between
+
+.messageText
+    margin-top: 12px
