@@ -1,8 +1,8 @@
 // Global
-import React from 'react';
+import React from "react";
 
 // Local
-import './style.sass';
+import "./style.sass";
 import Thread from "./components/Thread";
 
 class App extends React.Component {
@@ -10,9 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: null
-    }
+    };
   }
-
 
   componentDidMount() {
     // We are using json-server to mock a response.
@@ -28,7 +27,11 @@ class App extends React.Component {
     const data = this.state.data;
     return (
       <div className="container">
-        {data === null ? <div>Loading...</div> : data.map(thread => <Thread key={thread[0].id} thread={thread} />)}
+        {data === null ? (
+          <div>Loading...</div>
+        ) : (
+          data.map(thread => <Thread key={thread[0].id} thread={thread} />)
+        )}
       </div>
     );
   }
