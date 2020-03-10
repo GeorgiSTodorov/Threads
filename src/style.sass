@@ -2,6 +2,7 @@
 
 $backgroundGrey: #f2f2f2
 $borderGrey: #f1f1f1
+$borderWidth: 1px
 $containerMaxWidth: 768px
 $containerMinWidth: 320px
 $highRatingMessageCount: #27aae1
@@ -19,18 +20,27 @@ $messageCountPadding: 4px
 $messageMargin: 40px
 $messageMinHeigth: 80px
 $messagePadding: 24px
+$messagesStackHeight: 100%
+$messagesStackLeft: 7px
+$messagesStackTop: 5px
+$messagesStackWidth: 100%
+$messagesStackZIndex: -1
 $messageTextFontSize: 0.9rem
 $messageTextMargin: 8px
 $messageWidth: 90%
 $questionAndDateFontSize: 0.8rem
 $questionAndDateTopMargin: 4px
 $questionWidth: 80%
+$textColor: #999999
+$threeMessagesLeft: 12px
+$threeMessagesTop: 10px
+$threeMessagesZIndex: -2
 $white: #FFFFFF
 
 body
   background: $backgroundGrey
   font-family: Comfortaa
-  color: #999999
+  color: $textColor
 
 .container
   margin: auto
@@ -40,7 +50,7 @@ body
 .message
   background: $white
   border-radius: $messageBorderRadius
-  border: 1px solid $borderGrey
+  border: $borderWidth solid $borderGrey
   box-shadow: 10px 5px 5px $borderGrey
   margin: auto
   margin-top: $messageMargin
@@ -78,69 +88,45 @@ body
   margin-top: $messageCountMarginTop
   padding: $messageCountPadding
   span
-    background: $highRatingMessageCount
     border-radius: $messageCountBorderRadius
     padding: $messageCountInnerPadding
     text-align: center
     width: $messageCountInnerWidth
+    &.messageCountHighRating
+      background: $highRatingMessageCount
+    &.messageCountLowRating
+      background: $lowRatingMessageCount
 
-.threeMessages
+.messagesStack,
   background-color: $white
-  position: relative
-  margin-top: 40px
   cursor: pointer
+  position: relative
 
-.threeMessages,
-.threeMessages::before,
-.threeMessages::after
+.messagesStack,
+.messagesStack::before,
+.messagesStack::after,
   box-shadow: 2px 1px 1px $borderGrey
 
-.threeMessages::before,
-.threeMessages::after
-  content: ""
-  position: absolute
-  width: 100%
-  height: 100%
+.messagesStack::before,
+.messagesStack::after
   background-color: $white
   border-radius: $messageBorderRadius
+  content: ""
+  height: $messagesStackHeight
+  position: absolute
+  width: $messagesStackWidth
 
-.threeMessages::before
-  left: 7px
-  top: 5px
-  z-index: -1
+.messagesStack::before
+  left: $messagesStackLeft
+  top: $messagesStackTop
+  z-index: $messagesStackZIndex
+
+.twoMessages::after
+  left: $messagesStackLeft
+  top: $messagesStackTop
+  z-index: $messagesStackZIndex
 
 .threeMessages::after
-  left: 12px
-  top: 10px
-  z-index: -2
-
-
-.twoMessages
-  background-color: $white
-  position: relative
-  margin-top: 40px
-  cursor: pointer
-
-.twoMessages,
-.twoMessages::before,
-.twoMessages::after
-  box-shadow: 2px 1px 1px $borderGrey
-
-.twoMessages::before,
-.twoMessages::after
-  content: ""
-  position: absolute
-  width: 100%
-  height: 100%
-  background-color: $white
-  border-radius: $messageBorderRadius
-
-.twoMessages::before
-  left: 7px
-  top: 5px
-  z-index: -1
-
-.twoMessages::after
-  left: 7px
-  top: 5px
-  z-index: -1
+  left: $threeMessagesLeft
+  top: $threeMessagesTop
+  z-index: $threeMessagesZIndex

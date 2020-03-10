@@ -28,7 +28,7 @@ class App extends React.Component {
     const data = this.state.data;
     return (
       <div className="container">
-        {data === null ? <div>Loading...</div> : data.map(thread => <Thread thread={thread} />)}
+        {data === null ? <div>Loading...</div> : data.map(thread => <Thread key={thread[0].id} thread={thread} />)}
       </div>
     );
   }
