@@ -10,7 +10,6 @@ const Thread = ({ thread }) => {
   // The rating of a thread is the average rating of the messages it contains.
   const messagesWithRating = thread.filter(m => m.score !== undefined);
   const threadRating = messagesWithRating.map(m => m.score).reduce((a, b) => a + b)/messagesWithRating.length;
-  console.log(threadRating);
 
   // created_at is not necessarily unique, but it's the best we have in terms of uniqueness.
   return (

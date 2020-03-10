@@ -13,13 +13,13 @@ $messageBorderRadius: 2%
 $messageCountBorderRadius: 16px
 $messageCountFontSize: 0.8rem
 $messageCountInnerPadding: 2px
-$messageCountInnerWidth: 25%
+$messageCountInnerWidth: 120px
 $messageCountMarginBottom: 20px
-$messageCountMarginTop: -40px
+$messageCountMarginTop: -36px
 $messageCountPadding: 4px
+$messageInnerMargin: 24px
 $messageMargin: 40px
 $messageMinHeigth: 80px
-$messagePadding: 24px
 $messagesStackHeight: 100%
 $messagesStackLeft: 7px
 $messagesStackTop: 5px
@@ -27,7 +27,7 @@ $messagesStackWidth: 100%
 $messagesStackZIndex: -1
 $messageTextFontSize: 0.9rem
 $messageTextMargin: 8px
-$messageWidth: 90%
+$messageWidth: 85%
 $questionAndDateFontSize: 0.8rem
 $questionAndDateTopMargin: 4px
 $questionWidth: 80%
@@ -44,8 +44,8 @@ body
 
 .container
   margin: auto
-  max-width: $containerMinWidth
-  min-width: $containerMaxWidth
+  max-width: $containerMaxWidth
+  min-width: $containerMinWidth
 
 .message
   background: $white
@@ -55,8 +55,10 @@ body
   margin: auto
   margin-top: $messageMargin
   min-height: $messageMinHeigth
-  padding: $messagePadding
   width: $messageWidth
+
+.innerContainer
+  margin: $messageInnerMargin
 
 .messageRow
   display: flex
@@ -83,7 +85,7 @@ body
   color: $white
   display: flex
   font-size: $messageCountFontSize
-  justify-content: right
+  justify-content: flex-end
   margin-bottom: $messageCountMarginBottom
   margin-top: $messageCountMarginTop
   padding: $messageCountPadding

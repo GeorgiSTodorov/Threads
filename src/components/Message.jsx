@@ -51,6 +51,7 @@ const Message = ({ message, messagesLength, threadRating }) => {
                     "message messagesStack threeMessages"
                     : "message messagesStack twoMessages"
                 : "message"}>
+        <div className="innerContainer">
             {messagesLength !== 0 &&
                 <div className="messageCount">
                     <span className={threadRating > 5 ? "messageCountHighRating" : "messageCountLowRating"}>{messagesLength} messages</span>
@@ -66,6 +67,7 @@ const Message = ({ message, messagesLength, threadRating }) => {
                 <span>{getMonthAndDate(message.created_at)}</span>
             </div>
             <div className="messageRow messageText">{message.text}</div>
+            </div>
         </div>
     );
 }

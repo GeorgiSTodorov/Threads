@@ -1,10 +1,12 @@
 Welcome to my litte exercise in Frontend Development.
 
-This is a threads example using React, json-server and sass.
+This is a threads example using React, json-server and sass. Developed and tested mainly in Firefox.
 
 Please enjoy.
 
-![Gif](./public/example.gif)
+![Gif1](./public/example.gif)
+
+![Gif2](./public/scale.gif)
 
 ## Getting Started
 
