@@ -1,5 +1,10 @@
 Welcome to my litte exercise in Frontend Development.
-This is a threads example using React, json-server and sass. Please enjoy.
+
+This is a threads example using React, json-server and sass.
+
+Please enjoy.
+
+![Gif](./public/example.gif)
 
 ## Getting Started
 
@@ -7,7 +12,7 @@ This is a threads example using React, json-server and sass. Please enjoy.
 Run in the terminal: `git clone https://github.com/GeorgiSTodorov/Threads.git`
 
 ### Open the folder
-`cd threads`
+`cd Threads`
 
 ### Install the dependencies
 `npm install`
