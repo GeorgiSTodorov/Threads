@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MONTHS =  {
+const MONTHS = {
     1: "January",
     2: "February",
     3: "March",
@@ -43,16 +43,22 @@ const getMonthAndDate = (date) => {
     return MONTHS[Number(month)] + " " + getDaySuffix(Number(day));
 }
 
-const Message = ({message}) => {
-  return (
-    <div className="message">
-      <div className="messageRow"><span>{message.subject}</span>
-      <span>{message.team}</span></div>
-      <div className="messageRow"><span>{message.question}</span>
-      <span>{getMonthAndDate(message.created_at)}</span></div>
-      <div className="messageRow messageText">{message.text}</div>
-    </div>
-  );
+const Message = ({ message, messagesLength }) => {
+    return (
+        <div className={
+            messagesLength !== 0 ?
+                messagesLength > 2 ?
+                "message threeMessages"
+                :"message twoMessages"
+            :"message"}>
+            {messagesLength !== 0 && <div className="messageCount"><span>{messagesLength} messages</span></div>}
+            <div className="messageRow"><span className={message.score && message.score > 5 ? "highRating" : "lowRating"}>{message.subject}</span>
+                <span>{message.team}</span></div>
+            <div className="messageRow questionAndDate"><span>{message.question}</span>
+                <span>{getMonthAndDate(message.created_at)}</span></div>
+            <div className="messageRow messageText">{message.text}</div>
+        </div>
+    );
 }
 
 export default Message;

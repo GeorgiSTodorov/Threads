@@ -1,16 +1,36 @@
-$backgroundGrey: rgb(240, 240, 240)
-$borderGrey: rgb(230, 230, 230)
+@import url("https://fonts.googleapis.com/css?family=Comfortaa")
+
+$backgroundGrey: #f2f2f2
+$borderGrey: #f1f1f1
 $containerMaxWidth: 768px
 $containerMinWidth: 320px
-$messageMargin: 20px
+$highRatingMessageCount: #27aae1
+$highRatingTitle: #9335ff
+$lowRatingMessageCount: #e89d40
+$lowRatingTitle: #e89d40
+$messageBorderRadius: 2%
+$messageCountBorderRadius: 16px
+$messageCountFontSize: 0.8rem
+$messageCountInnerPadding: 2px
+$messageCountInnerWidth: 25%
+$messageCountMarginBottom: 20px
+$messageCountMarginTop: -40px
+$messageCountPadding: 4px
+$messageMargin: 40px
 $messageMinHeigth: 80px
 $messagePadding: 24px
+$messageTextFontSize: 0.9rem
+$messageTextMargin: 8px
+$messageWidth: 90%
+$questionAndDateFontSize: 0.8rem
+$questionAndDateTopMargin: 4px
+$questionWidth: 80%
 $white: #FFFFFF
-$messageBorderRadius: 2%
-$messageWidth: 80%
 
 body
   background: $backgroundGrey
+  font-family: Comfortaa
+  color: #999999
 
 .container
   margin: auto
@@ -21,8 +41,9 @@ body
   background: $white
   border-radius: $messageBorderRadius
   border: 1px solid $borderGrey
-  margin-top: $messageMargin
+  box-shadow: 10px 5px 5px $borderGrey
   margin: auto
+  margin-top: $messageMargin
   min-height: $messageMinHeigth
   padding: $messagePadding
   width: $messageWidth
@@ -31,5 +52,95 @@ body
   display: flex
   justify-content: space-between
 
+.questionAndDate
+  font-size: $questionAndDateFontSize
+  margin-top: $questionAndDateTopMargin
+  span
+    &:nth-child(1)
+      width: $questionWidth
+
 .messageText
-    margin-top: 12px
+  font-size: $messageTextFontSize
+  margin-top: $messageTextMargin
+
+.highRating
+  color: $highRatingTitle
+
+.lowRating
+  color: $lowRatingTitle
+
+.messageCount
+  color: $white
+  display: flex
+  font-size: $messageCountFontSize
+  justify-content: right
+  margin-bottom: $messageCountMarginBottom
+  margin-top: $messageCountMarginTop
+  padding: $messageCountPadding
+  span
+    background: $highRatingMessageCount
+    border-radius: $messageCountBorderRadius
+    padding: $messageCountInnerPadding
+    text-align: center
+    width: $messageCountInnerWidth
+
+.threeMessages
+  background-color: $white
+  position: relative
+  margin-top: 40px
+  cursor: pointer
+
+.threeMessages,
+.threeMessages::before,
+.threeMessages::after
+  box-shadow: 2px 1px 1px $borderGrey
+
+.threeMessages::before,
+.threeMessages::after
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: $white
+  border-radius: $messageBorderRadius
+
+.threeMessages::before
+  left: 7px
+  top: 5px
+  z-index: -1
+
+.threeMessages::after
+  left: 12px
+  top: 10px
+  z-index: -2
+
+
+.twoMessages
+  background-color: $white
+  position: relative
+  margin-top: 40px
+  cursor: pointer
+
+.twoMessages,
+.twoMessages::before,
+.twoMessages::after
+  box-shadow: 2px 1px 1px $borderGrey
+
+.twoMessages::before,
+.twoMessages::after
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: $white
+  border-radius: $messageBorderRadius
+
+.twoMessages::before
+  left: 7px
+  top: 5px
+  z-index: -1
+
+.twoMessages::after
+  left: 7px
+  top: 5px
+  z-index: -1
